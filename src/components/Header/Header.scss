@@ -1,9 +1,8 @@
 @import '../../styles/variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@700&display=swap');
+@import '../../styles/fonts.scss';
 
 .header {
   background-color: $header-background-color;
-  color: $header-font-color;
 
   position: fixed;
   width: 100%;
@@ -15,7 +14,19 @@
   align-items: center;
 
   .logo {
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: $font-logo;
     font-size: 1.75rem;
+    cursor: pointer;
+
+    .link {
+      text-decoration: none;
+      color: $header-font-color;
+    }
+  }
+
+  .buttons_group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 }

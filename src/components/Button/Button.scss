@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+@import '../../styles/fonts.scss';
+
+.button {
+  background-color: white;
+  color: black;
+  height: 40px;
+  padding: 10px 40px;
+  font-family: $font-button;
+  cursor: pointer;
+}

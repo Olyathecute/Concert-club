@@ -1,14 +1,13 @@
 @import '../../styles/variables.scss';
 
-.wrapper {
+.post {
   border: 1px solid $font-color;
-  margin-bottom: 1rem;
-  padding: 1rem;
+  margin: 1rem;
+  padding: 10px;
 
   .title {
   }
 
-  .info {
-    opacity: 41%;
+  .body {
   }
 }

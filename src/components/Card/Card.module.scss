@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  border: 1px solid $font-color;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+
+  flex: 50%;
+
+  .title {
+    font-size: 17px;
+    font-weight: 700;
+    padding-bottom: 5px;
+  }
+
+  .info {
+    opacity: 41%;
+    font-size: 12px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

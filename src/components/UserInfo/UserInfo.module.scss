@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+@mixin grid-cell($row-start, $row-end, $column-start, $column-end) {
+  grid-row-start: $row-start;
+  grid-row-end: $row-end;
+  grid-column-start: $column-start;
+  grid-column-end: $column-end;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.75rem repeat(4, 1fr) 1.75rem;
+  grid-template-rows: 2fr, 1fr, 1fr;
+
+  border-top: 1px solid $font-color;
+  border-left: 1px solid $font-color;
+
+  &.grid > div {
+    padding: 10px;
+    border-bottom: 1px solid $font-color;
+    border-right: 1px solid $font-color;
+  }
+
+  .username {
+    font-size: 35px;
+    font-weight: 500;
+
+    @include grid-cell(1, 2, 2, 6);
+  }
+
+  .name {
+    @include grid-cell(2, 3, 2, 3);
+  }
+
+  .email {
+    @include grid-cell(2, 3, 3, 4);
+  }
+
+  .phone {
+    @include grid-cell(2, 3, 4, 5);
+  }
+
+  .website {
+    @include grid-cell(2, 3, 5, 6);
+  }
+
+  .company_name {
+    @include grid-cell(3, 4, 2, 3);
+  }
+
+  .company_bs {
+    @include grid-cell(3, 4, 3, 6);
+  }
+}

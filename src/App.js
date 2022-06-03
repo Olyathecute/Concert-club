@@ -5,11 +5,10 @@ import ListOfUsers from './components/ListOfUsers/ListOfUsers'
 import Profile from './components/Profile/Profile'
 import Post from './components/Post/Post'
 import Posts from './components/Post/Post'
-import './App.css'
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<ListOfUsers />} />
@@ -17,7 +16,7 @@ function App() {
         <Route path="/post" element={<Post />} />
         <Route path="/posts" element={<Posts />} />
       </Routes>
-    </div>
+    </>
   )
 }
 

@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  margin: 1rem 2rem;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+}

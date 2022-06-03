@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  border: 1px solid $font-color;
+  margin-bottom: 1rem;
+  padding: 1rem;
+
+  .title {
+  }
+
+  .info {
+    opacity: 41%;
+  }
+}

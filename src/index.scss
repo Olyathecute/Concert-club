@@ -1,0 +1,13 @@
+@import './styles/variables.scss';
+@import './styles/fonts.scss';
+
+body {
+  margin: 0;
+  font-family: $font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}

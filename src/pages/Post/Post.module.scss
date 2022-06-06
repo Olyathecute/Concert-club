@@ -1,13 +1,26 @@
 @import '../../styles/variables.scss';
 
-.post {
-  border: 1px solid $font-color;
+.wrapper {
   margin: 1rem;
   padding: 10px;
 
-  .title {
+  .link {
+    padding-top: 1rem;
+    text-decoration: none;
+    color: $font-color;
   }
 
-  .body {
+  .post {
+    border: 1px solid black;
+    padding: 1rem;
+
+    .title {
+      font-size: 35px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .body {
+    }
   }
 }

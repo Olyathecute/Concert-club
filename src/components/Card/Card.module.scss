@@ -4,9 +4,12 @@
   border: 1px solid $font-color;
   margin-bottom: 1rem;
   padding: 1rem 2rem;
-  cursor: pointer;
 
   flex: 50%;
+
+  .true {
+    cursor: pointer;
+  }
 
   .title {
     font-size: 17px;

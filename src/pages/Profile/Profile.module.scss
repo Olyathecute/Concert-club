@@ -8,11 +8,6 @@
     margin-top: 1rem;
     padding: 1rem 1.75rem;
 
-    .link {
-      text-decoration: none;
-      color: $font-color;
-    }
-
     h2 {
       margin-top: 0;
     }
@@ -20,6 +15,15 @@
     .list {
       display: flex;
       flex-direction: column;
+
+      .post {
+        flex: 1;
+      }
     }
   }
+}
+
+.link {
+  text-decoration: none;
+  color: $font-color;
 }

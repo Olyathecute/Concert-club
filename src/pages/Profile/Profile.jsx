@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { getAllUsers, getUsersPosts } from '../../requests'
 import Loader from '../../components/Loader/Loader'
 import UserInfo from '../../components/UserInfo/UserInfo'
-import Post from '../Post/Post'
 import Card from '../../components/Card/Card'
 import style from './Profile.module.scss'
 
@@ -32,9 +31,11 @@ export default function Profile() {
         <div className={style.list}>
           {posts.map((post, index) => {
             return (
-              <Link key={index} to={`/post/${post.id}`}>
-                <Card title={post.title} info={post.body} />
-              </Link>
+              <div key={index} className={style.post}>
+                <Link to={`/post/${post.id}`} className={style.link} clicked={true}>
+                  <Card title={post.title} info={post.body} />
+                </Link>
+              </div>
             )
           })}
         </div>

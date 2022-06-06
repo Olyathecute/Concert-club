@@ -1,38 +1,39 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { getAllUsers, getUsersPosts } from '../../requests'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUsers } from '../../features/users/usersSlice'
+import { getPosts } from '../../features/posts/postsSlice'
 import Loader from '../../components/Loader/Loader'
 import UserInfo from '../../components/UserInfo/UserInfo'
 import Card from '../../components/Card/Card'
 import style from './Profile.module.scss'
 
 export default function Profile() {
-  const [user, setUser] = useState([])
-  const [posts, setPosts] = useState([])
+  const dispatch = useDispatch()
+  const user = useSelector(state => state.users.currentUser)
+  const posts = useSelector(state => state.posts)
 
   useEffect(() => {
-    getAllUsers().then(setUser)
-    getUsersPosts().then(setPosts)
+    dispatch(getUsers())
+    dispatch(getPosts())
   }, [])
 
-  if (!user.length) return <Loader />
-
-  console.log(user, posts)
+  if (!user) return <Loader />
 
   return (
     <div className={style.wrapper}>
-      <UserInfo user={user[7]} />
+      <UserInfo user={user} />
 
       <div className={style.posts}>
         <Link to="/posts" className={style.link}>
-          <h2>{user[7].name}`s posts</h2>
+          <h2>{user.name}`s posts</h2>
         </Link>
 
         <div className={style.list}>
           {posts.map((post, index) => {
             return (
               <div key={index} className={style.post}>
-                <Link to={`/post/${post.id}`} className={style.link} clicked={true}>
+                <Link to={`/post/${post.id}`} className={style.link}>
                   <Card title={post.title} info={post.body} />
                 </Link>
               </div>

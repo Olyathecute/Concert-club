@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Card from '../../components/Card/Card'
 import Loader from '../../components/Loader/Loader'
-import { getAllUsers } from '../../requests'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUsers } from '../../features/users/usersSlice'
 import style from './ListOfUsers.module.scss'
 
 export default function ListOfUsers() {
-  const [users, setUsers] = useState([])
+  const dispatch = useDispatch()
+  const allUsers = useSelector(state => state.users.users)
 
   useEffect(() => {
-    getAllUsers().then(setUsers)
+    dispatch(getUsers())
   }, [])
 
-  if (!users.length) return <Loader />
+  if (!allUsers.length) return <Loader />
+
+  console.log(allUsers)
 
   return (
     <div className={style.wrapper}>
       <h2>List of users</h2>
       <div className={style.list}>
-        {users.map(({ name }, index) => {
+        {allUsers?.map(({ name }, index) => {
           return <Card key={index} title={name} />
         })}
       </div>

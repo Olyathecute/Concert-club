@@ -8,22 +8,12 @@
     margin-top: 1rem;
     padding: 1rem 1.75rem;
 
-    h2 {
-      margin-top: 0;
+    .link {
+      @include link;
     }
 
-    .list {
-      display: flex;
-      flex-direction: column;
-
-      .post {
-        flex: 1;
-      }
+    .title {
+      @include title;
     }
   }
-}
-
-.link {
-  text-decoration: none;
-  color: $font-color;
 }

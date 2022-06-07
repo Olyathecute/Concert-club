@@ -2,21 +2,22 @@
 
 .wrapper {
   border: 1px solid $font-color;
-  margin-bottom: 1rem;
   padding: 1rem 2rem;
-
-  flex: 50%;
+  width: 100%;
+  box-sizing: border-box;
 
   .title {
     font-size: 17px;
     font-weight: 700;
     padding-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .info {
+  .description {
     opacity: 41%;
     font-size: 12px;
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

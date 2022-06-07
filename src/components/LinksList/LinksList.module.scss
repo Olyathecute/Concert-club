@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .card {
+    margin-bottom: 1rem;
+    width: calc(50% - 5px);
+  }
+
+  .link {
+    @include link;
+  }
+}

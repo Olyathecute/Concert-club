@@ -1,12 +1,14 @@
 @import '../../styles/variables.scss';
 
-.post {
+.posts {
   margin: 1rem;
   padding: 10px;
 
+  .go_back {
+    @include go_back;
+  }
+
   .link {
-    padding-top: 1rem;
-    text-decoration: none;
-    color: $font-color;
+    @include link;
   }
 }

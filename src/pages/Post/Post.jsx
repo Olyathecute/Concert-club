@@ -1,16 +1,19 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { HiOutlineChevronLeft } from 'react-icons/hi'
 import style from './Post.module.scss'
 
 export default function Post() {
   const { id } = useParams()
 
+  console.log(id)
+
   return (
     <div className={style.wrapper}>
-      <Link to="/posts" className={style.link}>
-        <HiOutlineChevronLeft size={40} />
-      </Link>
+      <div className={style.go_back}>
+        <Link to="/posts" className={style.link}>
+          <div>... ко всем постам</div>
+        </Link>
+      </div>
 
       <div className={style.post}>
         <div className={style.title}>id labore ex et quam laborum</div>

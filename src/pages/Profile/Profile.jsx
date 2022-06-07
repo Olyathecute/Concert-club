@@ -5,7 +5,7 @@ import { getUsers } from '../../features/users/usersSlice'
 import { getPosts } from '../../features/posts/postsSlice'
 import Loader from '../../components/Loader/Loader'
 import UserInfo from '../../components/UserInfo/UserInfo'
-import Card from '../../components/Card/Card'
+import LinksList from '../../components/LinksList/LinksList'
 import style from './Profile.module.scss'
 
 export default function Profile() {
@@ -16,7 +16,7 @@ export default function Profile() {
   useEffect(() => {
     dispatch(getUsers())
     dispatch(getPosts())
-  }, [])
+  }, [dispatch])
 
   if (!user) return <Loader />
 
@@ -26,20 +26,10 @@ export default function Profile() {
 
       <div className={style.posts}>
         <Link to="/posts" className={style.link}>
-          <h2>{user.name}`s posts</h2>
+          <div className={style.title}>Посты</div>
         </Link>
 
-        <div className={style.list}>
-          {posts.map((post, index) => {
-            return (
-              <div key={index} className={style.post}>
-                <Link to={`/post/${post.id}`} className={style.link}>
-                  <Card title={post.title} info={post.body} />
-                </Link>
-              </div>
-            )
-          })}
-        </div>
+        <LinksList items={posts.map(({ body, title, id }) => ({ title: title, description: body, link: `/post/${id}` }))} />
       </div>
     </div>
   )

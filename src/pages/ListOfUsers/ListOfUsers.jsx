@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import Card from '../../components/Card/Card'
-import Loader from '../../components/Loader/Loader'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUsers } from '../../features/users/usersSlice'
+import LinksList from '../../components/LinksList/LinksList'
+import Loader from '../../components/Loader/Loader'
 import style from './ListOfUsers.module.scss'
 
 export default function ListOfUsers() {
@@ -11,20 +11,15 @@ export default function ListOfUsers() {
 
   useEffect(() => {
     dispatch(getUsers())
-  }, [])
+  }, [dispatch])
 
   if (!allUsers.length) return <Loader />
 
-  console.log(allUsers)
-
   return (
     <div className={style.wrapper}>
-      <h2>List of users</h2>
-      <div className={style.list}>
-        {allUsers?.map(({ name }, index) => {
-          return <Card key={index} title={name} />
-        })}
-      </div>
+      <div className={style.title}>Список пользователей</div>
+
+      <LinksList items={allUsers.map(({ name }) => ({ title: name }))} />
     </div>
   )
 }

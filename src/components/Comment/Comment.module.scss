@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .wrapper {
-  border: 1px solid $border;
+  border: 1px solid $comment-border;
   margin: 1rem 0;
   padding: 1rem;
 
@@ -15,7 +15,7 @@
     }
 
     .email {
-      opacity: 41%;
+      opacity: $card-description-opacity;
     }
   }
 

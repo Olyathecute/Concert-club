@@ -42,10 +42,10 @@ export default function Form({ formOpen }) {
 
       <div className={style.button_group}>
         <div>
-          <Button onClick={() => formOpen(false)} name="Закрыть" />
+          <Button onClick={() => formOpen(false)} name="Закрыть" color="black" />
         </div>
         <div>
-          <Button onClick={sendComment} name="Отправить" />
+          <Button onClick={sendComment} name="Отправить" color="black" />
         </div>
       </div>
     </div>

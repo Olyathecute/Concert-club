@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .wrapper {
-  border: 1px solid $font-color;
+  border: 1px solid $card-border;
   padding: 1rem 2rem;
   width: 100%;
   box-sizing: border-box;
@@ -16,7 +16,7 @@
   }
 
   .description {
-    opacity: 41%;
+    opacity: $card-description-opacity;
     font-size: 12px;
     white-space: nowrap;
     overflow: hidden;

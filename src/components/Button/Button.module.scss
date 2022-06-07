@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+@import '../../styles/fonts.scss';
+
+@mixin button {
+  height: 40px;
+  padding: 10px 40px;
+  font-family: $font;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.black {
+  background-color: $button-black-background;
+  color: $button-black-font-color;
+  @include button;
+}
+
+.white {
+  background-color: $button-white-background;
+  color: $button-white-font-color;
+  @include button;
+}

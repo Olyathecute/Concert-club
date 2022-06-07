@@ -1,9 +1,9 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 @import '../../styles/fonts.scss';
 
 .header {
   background-color: $header-background-color;
-
   height: 70px;
   padding: 1rem 2rem;
   box-sizing: border-box;

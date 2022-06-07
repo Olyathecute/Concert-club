@@ -4,22 +4,16 @@ $font-color: #101010;
 $header-background-color: #101010;
 $header-font-color: #ffffff;
 
-$border: #dadada;
+$button-black-background: #101010;
+$button-black-font-color: #ffffff;
 
-@mixin link {
-  text-decoration: none;
-  color: $font-color;
-}
+$button-white-background: #ffffff;
+$button-white-font-color: #101010;
 
-@mixin title {
-  font-weight: 500;
-  font-size: 35px;
-  margin-bottom: 1rem;
-}
+$comment-border: #dadada;
+$error-border: #bd1515;
 
-@mixin go_back {
-  margin-bottom: 1rem;
-  font-weight: 600;
-  font-size: 18px;
-  opacity: 41%;
-}
+$card-border: #101010;
+$card-description-opacity: 41%;
+
+$form-background: #101010d5;

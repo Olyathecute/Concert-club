@@ -1,9 +1,9 @@
 import React from 'react'
-import './Button.scss'
+import style from './Button.module.scss'
 
-export default function Button({ name, onClick }) {
+export default function Button({ name, onClick, color }) {
   return (
-    <button className="button" onClick={onClick}>
+    <button className={style[color]} onClick={onClick}>
       {name}
     </button>
   )

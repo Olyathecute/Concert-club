@@ -41,7 +41,7 @@ export default function Post() {
         <Comment key={index} author={name} comment={body} email={email} />
       ))}
 
-      <Button name="Добавить комментарий" onClick={() => setCommentFormOpen(true)} />
+      <Button onClick={() => setCommentFormOpen(true)} name="Добавить комментарий" color="black" />
 
       {commentFormOpen ? <Form formOpen={setCommentFormOpen} /> : null}
     </div>

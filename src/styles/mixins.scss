@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+@mixin link {
+  text-decoration: none;
+  color: $font-color;
+}
+
+@mixin title {
+  font-weight: 500;
+  font-size: 35px;
+  margin-bottom: 1rem;
+}
+
+@mixin go_back {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 41%;
+}

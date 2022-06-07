@@ -7,13 +7,14 @@
 
 @mixin title {
   font-weight: 500;
-  font-size: 35px;
+  font-size: 2em;
+  display: inline-block;
   margin-bottom: 1rem;
 }
 
 @mixin go_back {
   margin-bottom: 1rem;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1em;
   opacity: 41%;
 }

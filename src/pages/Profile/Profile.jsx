@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUsers } from '../../features/users/usersSlice'
@@ -13,12 +13,19 @@ export default function Profile() {
   const user = useSelector(state => state.users.currentUser)
   const posts = useSelector(state => state.posts)
 
+  const [truncatePosts, setTruncatePosts] = useState(true)
+
   useEffect(() => {
     dispatch(getUsers())
     dispatch(getPosts())
   }, [dispatch])
 
   if (!user) return <Loader />
+
+  const handelClick = () => setTruncatePosts(!truncatePosts)
+
+  const displayPosts = truncatePosts ? posts.slice(0, 3) : posts
+  const moreText = truncatePosts ? 'показать ещё...' : 'скрыть'
 
   return (
     <div className={style.wrapper}>
@@ -29,7 +36,10 @@ export default function Profile() {
           <div className={style.title}>Посты</div>
         </Link>
 
-        <LinksList items={posts.map(({ body, title, id }) => ({ title: title, description: body, link: `/post/${id}` }))} />
+        <LinksList items={displayPosts.map(({ body, title, id }) => ({ title: title, description: body, link: `/post/${id}` }))} />
+        <div className={style.more}>
+          <span onClick={handelClick}>{moreText}</span>
+        </div>
       </div>
     </div>
   )

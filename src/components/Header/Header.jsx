@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setTheme } from '../../features/theme/themeSlice'
@@ -9,10 +9,14 @@ export default function Header() {
   const dispatch = useDispatch()
   const theme = useSelector(state => state.theme)
 
-  console.log(theme)
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem('theme', theme)
+  }, [theme])
 
   const changeTheme = () => {
-    dispatch(setTheme(theme === 'normal' ? 'increased' : 'normal'))
+    const nexTheme = theme === 'normal' ? 'increased' : 'normal'
+    dispatch(setTheme(nexTheme))
   }
   return (
     <header className={style.header}>

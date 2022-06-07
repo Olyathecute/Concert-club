@@ -7,9 +7,7 @@
   box-sizing: border-box;
 
   .title {
-    font-size: 17px;
     font-weight: 700;
-    padding-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -17,7 +15,8 @@
 
   .description {
     opacity: $card-description-opacity;
-    font-size: 12px;
+    font-size: 0.75em;
+    padding-top: 0.3rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

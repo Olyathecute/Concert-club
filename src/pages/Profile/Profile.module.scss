@@ -6,7 +6,7 @@
 
   .posts {
     border-top: 1px solid $card-border;
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 1rem 1.75rem;
 
     .link {
@@ -15,6 +15,16 @@
 
     .title {
       @include title;
+    }
+
+    .more {
+      text-align: center;
+      @include go_back;
+
+      span {
+        margin: 0;
+        cursor: pointer;
+      }
     }
   }
 }

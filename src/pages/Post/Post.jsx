@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { getPosts } from '../../features/posts/postsSlice'
@@ -7,10 +7,12 @@ import Comment from '../../components/Comment/Comment'
 import Button from '../../components/Button/Button'
 import Loader from '../../components/Loader/Loader'
 import style from './Post.module.scss'
+import Form from '../../components/Form/Form'
 
 export default function Post() {
   const { id } = useParams()
   const dispatch = useDispatch()
+  const [commentFormOpen, setCommentFormOpen] = useState(false)
 
   const post = useSelector(state => state.posts[id - 1])
   const comments = useSelector(state => state.comments)
@@ -36,10 +38,12 @@ export default function Post() {
       </div>
 
       {comments.map(({ name, body, email }, index) => (
-        <Comment key={index} author={name} body={body} email={email} />
+        <Comment key={index} author={name} comment={body} email={email} />
       ))}
 
-      <Button name="Добавить комментарий" />
+      <Button name="Добавить комментарий" onClick={() => setCommentFormOpen(true)} />
+
+      {commentFormOpen ? <Form formOpen={setCommentFormOpen} /> : null}
     </div>
   )
 }

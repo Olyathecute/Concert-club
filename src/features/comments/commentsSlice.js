@@ -11,7 +11,9 @@ export const commentsSlice = createSlice({
   initialState: [],
   reducers: {
     setComments: (_, action) => action.payload,
-    addComment: (state, action) => state.push(action.payload)
+    addComment: (state, action) => {
+      state.push(action.payload)
+    }
   },
   extraReducers: {
     [getComments.fulfilled]: () => console.log('fulfilled'),
@@ -20,5 +22,5 @@ export const commentsSlice = createSlice({
   }
 })
 
-export const { setComments } = commentsSlice.actions
+export const { setComments, addComment } = commentsSlice.actions
 export default commentsSlice.reducer

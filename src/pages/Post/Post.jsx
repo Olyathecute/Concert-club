@@ -38,12 +38,12 @@ export default function Post() {
       </div>
 
       {comments.map(({ name, body, email }, index) => (
-        <Comment key={index} author={name} comment={body} email={email} />
+        <Comment key={index} author={name} body={body} email={email} />
       ))}
 
       <Button onClick={() => setCommentFormOpen(true)} name="Добавить комментарий" color="black" />
 
-      {commentFormOpen ? <Form formOpen={setCommentFormOpen} /> : null}
+      {commentFormOpen && <Form close={() => setCommentFormOpen(false)} />}
     </div>
   )
 }

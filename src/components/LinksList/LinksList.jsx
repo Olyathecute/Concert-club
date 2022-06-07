@@ -6,19 +6,17 @@ import style from './LinksList.module.scss'
 export default function LinksList({ items }) {
   return (
     <div className={style.list}>
-      {items?.map((item, index) =>
-        item.link ? (
-          <div key={index} className={style.card}>
+      {items?.map((item, index) => (
+        <div key={index} className={style.card}>
+          {item.link ? (
             <Link to={item.link} className={style.link}>
               <Card item={item} />
             </Link>
-          </div>
-        ) : (
-          <div key={index} className={style.card}>
+          ) : (
             <Card item={item} />
-          </div>
-        )
-      )}
+          )}
+        </div>
+      ))}
     </div>
   )
 }

@@ -27,6 +27,8 @@ export default function Profile() {
   const displayPosts = truncatePosts ? posts.slice(0, 3) : posts
   const moreText = truncatePosts ? 'показать ещё...' : 'скрыть'
 
+  const postItems = displayPosts.map(({ body, title, id }) => ({ title: title, description: body, link: `/post/${id}` }))
+
   return (
     <div className={style.wrapper}>
       <UserInfo user={user} />
@@ -36,7 +38,7 @@ export default function Profile() {
           <div className={style.title}>Посты</div>
         </Link>
 
-        <LinksList items={displayPosts.map(({ body, title, id }) => ({ title: title, description: body, link: `/post/${id}` }))} />
+        <LinksList items={postItems} />
         <div className={style.more}>
           <span onClick={handelClick}>{moreText}</span>
         </div>

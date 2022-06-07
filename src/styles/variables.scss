@@ -4,6 +4,8 @@ $font-color: #101010;
 $header-background-color: #101010;
 $header-font-color: #ffffff;
 
+$border: #dadada;
+
 @mixin link {
   text-decoration: none;
   color: $font-color;

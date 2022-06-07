@@ -10,7 +10,7 @@ export const postsSlice = createSlice({
   name: 'posts',
   initialState: [],
   reducers: {
-    setPosts: (state, action) => action.payload
+    setPosts: (_, action) => action.payload
   },
   extraReducers: {
     [getPosts.fulfilled]: () => console.log('fulfilled'),

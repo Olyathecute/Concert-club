@@ -14,7 +14,7 @@ export default function LinksList({ items }) {
             </Link>
           </div>
         ) : (
-          <div className={style.card}>
+          <div key={index} className={style.card}>
             <Card item={item} />
           </div>
         )

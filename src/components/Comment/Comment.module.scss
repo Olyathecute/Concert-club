@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  border: 1px solid $border;
+  margin: 1rem 0;
+  padding: 1rem;
+
+  .header {
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+
+    .author {
+      margin-right: 1rem;
+    }
+
+    .email {
+      opacity: 41%;
+    }
+  }
+
+  .body {
+    margin-top: 1rem;
+  }
+}

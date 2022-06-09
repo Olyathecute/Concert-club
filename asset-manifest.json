@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Concert-club/static/css/main.5e66b99c.css",
+    "main.js": "/Concert-club/static/js/main.f20c77bc.js",
+    "index.html": "/Concert-club/index.html",
+    "main.5e66b99c.css.map": "/Concert-club/static/css/main.5e66b99c.css.map",
+    "main.f20c77bc.js.map": "/Concert-club/static/js/main.f20c77bc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e66b99c.css",
+    "static/js/main.f20c77bc.js"
+  ]
+}
